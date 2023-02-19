@@ -3,9 +3,9 @@ let cl = console.log;
 
   const movieContainer = document.getElementById("movieContainer");
   const templating = (arr) =>{
-    let result = " ";
-    arr.map(movie =>{
-    result += `
+    
+    movieContainer.innerHTML = arr.map(movie =>{
+    return `
                 <div class="col-lg-3">
                   <div class="card">
                       <figure class="moviecard">
@@ -30,7 +30,7 @@ let cl = console.log;
                   </div>
               </div>
             `
-  })
-  movieContainer.innerHTML = result;
+  }).join('')
+   
 }
 templating(movieArr)
